@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# TruckTetris v2
 
-## Getting Started
+TruckTetris v2 is an intelligent logistics management platform that optimizes truck loading patterns using AI. The system processes CSV order files, extracts relevant information, and generates efficient loading plans while considering various constraints and safety requirements.
 
-First, run the development server:
+## Case Study: Moran Logistics - Target Cardboard Supply Chain
+The original TruckTetris was built for Moran Logistics to optimize their cardboard supply chain operations for Target stores. While the system showed promise, it proved overly complex for their needs. The key insight was that users primarily worked with CSV exports rather than PDFs, leading to the development of TruckTetris v2.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Key Differences from v1
+- Removed PDF processing in favor of direct CSV uploads
+- Simplified architecture by removing Supabase, AWS Textract, and other complex infrastructure
+- Streamlined UI focused on chat-based interaction
+- Faster loading plan generation with reduced processing overhead
+- Lower operational costs and maintenance requirements
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Key Features
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Order Processing
+- Direct CSV file upload and processing
+- Automatic item validation against master database
+- Unit conversion handling (cases, rolls, etc.)
+- Missing item information collection
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### AI-Powered Loading Optimization
+Uses Claude AI to generate optimal loading patterns considering:
+- Truck dimensions and constraints
+- Pallet sizes and quantities
+- Stacking rules and restrictions
+- Safety requirements and spacing
 
-## Learn More
+### User Interface
+- Chat-based interaction with AI assistant
+- Drag-and-drop CSV upload
+- Real-time loading plan generation
+- Dark mode support
+- Mobile-responsive design
 
-To learn more about Next.js, take a look at the following resources:
+## Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Frontend
+- Next.js 15.1
+- React 19
+- Tailwind CSS
+- Radix UI Components
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Backend
+- Next.js API Routes
+- Anthropic Claude API (Loading Optimization)
 
-## Deploy on Vercel
+## Architecture
+The application follows a simplified architecture:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Frontend Layer: Next.js application handling UI and client-side logic
+- API Layer: Next.js API routes for CSV processing and AI communication
+- Optimization Layer: Claude AI for loading pattern generation
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Creator
+Built by Anthony Campos
+[GitHub](https://github.com/yourusername)
