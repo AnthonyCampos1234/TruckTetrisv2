@@ -11,6 +11,7 @@ The original TruckTetris was built for Moran Logistics to optimize their cardboa
 - Streamlined UI focused on chat-based interaction
 - Faster loading plan generation with reduced processing overhead
 - Lower operational costs and maintenance requirements
+- Simpler UX
 
 ## Key Features
 
